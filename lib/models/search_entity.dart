@@ -5,12 +5,10 @@ part 'search_entity.g.dart';
 
 @JsonSerializable()
 class SearchEntity {
-  @JsonKey(name: "totalItems")
-  int? totalItems;
   @JsonKey(name: "items")
   List<BookEntity>? items;
 
-  SearchEntity({this.items, this.totalItems});
+  SearchEntity({this.items});
 
   factory SearchEntity.fromJson(Map<String, dynamic> json) =>
       _$SearchEntityFromJson(json);
