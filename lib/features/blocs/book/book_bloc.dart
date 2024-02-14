@@ -6,17 +6,17 @@ part 'book_event.dart';
 part 'book_state.dart';
 
 class BookBloc extends Bloc<BookEvent, BookState> {
-  BookBloc() : super(SearchBooksInitial()) {
+  BookBloc() : super(BookBlocInitial()) {
     on<SearchBooks>((event, emit) async {
-      emit(SearchBooksLoading());
+      emit(BookBlocLoading());
       try {
         final resp = await BookService.fetchBooks(bookName: event.bookName);
 
-        resp?.items != null
-            ? emit(SearchBooksSuccess(resp!.items!))
-            : emit(SearcBooksFailure());
+        (resp != null && resp.items != null && resp.items!.isNotEmpty)
+            ? emit(FetchBooksSuccess(books: resp.items!))
+            : emit(FetchBooksFailure());
       } catch (_) {
-        emit(SearcBooksFailure());
+        emit(FetchBooksFailure());
       }
     });
   }

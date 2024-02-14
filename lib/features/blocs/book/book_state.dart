@@ -7,16 +7,16 @@ sealed class BookState extends Equatable {
   List<Object?> get props => [];
 }
 
-final class SearchBooksInitial extends BookState {}
+final class BookBlocInitial extends BookState {}
 
-final class SearchBooksLoading extends BookState {}
+final class BookBlocLoading extends BookState {}
 
-final class SearcBooksFailure extends BookState {}
+final class FetchBooksFailure extends BookState {}
 
-final class SearchBooksSuccess extends BookState {
-  final List<BookEntity> bookList;
-  const SearchBooksSuccess(this.bookList);
+final class FetchBooksSuccess extends BookState {
+  final List<BookEntity> books;
+  const FetchBooksSuccess({required this.books});
 
   @override
-  List<Object?> get props => [bookList];
+  List<Object> get props => [books];
 }

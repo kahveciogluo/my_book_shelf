@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppConfig {
   /// MARK: Theme
-  static const String appFontFamily = "Verdana";
+  static const String appFontFamily = "Quicksand";
 
   /// MARK: Network
   static const String baseUrl = "https://www.googleapis.com/books/v1";
