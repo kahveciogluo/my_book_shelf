@@ -7,6 +7,12 @@ abstract class  LocaleKeys {
   static const publishedDate = 'publishedDate';
   static const pageCount = 'pageCount';
   static const search = 'search';
-  static const myFavoriteBooks = 'myFavoriteBooks';
+  static const favorites = 'favorites';
+  static const unknown = 'unknown';
+  static const explanation = 'explanation';
+  static const countOfTotalContent = 'countOfTotalContent';
+  static const loading = 'loading';
+  static const failure = 'failure';
+  static const initialHomePage = 'initialHomePage';
 
 }

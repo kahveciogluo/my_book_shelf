@@ -5,5 +5,11 @@
     "publishedDate": "Yayınlanma Tarihi",
     "pageCount": "Sayfa Sayısı",
     "search": "Ara",
-    "myFavoriteBooks": "Favori Kitaplarım"
+    "favorites": "Favoriler",
+    "unknown": "Bilinmiyor",
+    "explanation": "Açıklama",
+    "countOfTotalContent": "Toplam {COUNT} içerik bulundu.",
+    "loading": "Yükleniyor",
+    "failure": "Üzgünüz, malesef böyle bir içerik bulunmuyor.",
+    "initialHomePage": "Artık istediğin kitabı arayarak bulabilirsin."
 }

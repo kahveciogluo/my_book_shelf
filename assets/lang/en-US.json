@@ -5,5 +5,11 @@
     "publishedDate": "Published Date",
     "pageCount": "Page Count",
     "search": "Search",
-    "myFavoriteBooks": "My Favorite Books"
+    "favorites": "Favorites",
+    "unknown": "Unknown",
+    "explanation": "Explanation",
+    "countOfTotalContent": "{COUNT} content found.",
+    "loading": "Loading",
+    "failure": "Sorry, unfortunately such content does not exist.",
+    "initialHomePage": "Now you can find the book you want by searching."
 }
