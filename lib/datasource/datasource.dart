@@ -1,12 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:my_book_shelf/core/app_config.dart';
-import 'package:my_book_shelf/datasource/datasource_client.dart';
 import 'package:my_book_shelf/datasource/datasource_interceptor.dart';
 
 class Datasource {
   static Dio? _dio;
 
-  static Dio _getDio() {
+  static Dio getDio() {
     if (_dio == null) {
       _dio = Dio();
       _dio!.options.baseUrl = AppConfig.baseUrl;
@@ -16,10 +15,5 @@ class Datasource {
     }
 
     return _dio!;
-  }
-
-  static DatasourceClient initDatasourceClient() {
-    final dsClient = DatasourceClient(_getDio(), baseUrl: AppConfig.baseUrl);
-    return dsClient;
   }
 }
