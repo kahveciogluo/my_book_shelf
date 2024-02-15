@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_book_shelf/features/widgets/locale_text.dart';
-import 'package:my_book_shelf/features/widgets/search_component.dart';
+import 'package:my_book_shelf/features/search/search_component.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class AppStateWidget extends StatelessWidget {

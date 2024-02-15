@@ -9,7 +9,7 @@ import 'package:my_book_shelf/core/lang/locale_keys.g.dart';
 import 'package:my_book_shelf/features/pages/favorites_page.dart';
 import 'package:my_book_shelf/features/widgets/app_state_widget.dart';
 import 'package:my_book_shelf/features/widgets/book_card.dart';
-import 'package:my_book_shelf/features/widgets/search_component.dart';
+import 'package:my_book_shelf/features/search/search_component.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class HomePage extends StatefulWidget {

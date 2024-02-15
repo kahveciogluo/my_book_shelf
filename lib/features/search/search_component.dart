@@ -4,32 +4,44 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_book_shelf/blocs/book/book_bloc.dart';
 import 'package:my_book_shelf/core/extension/string_extension.dart';
 import 'package:my_book_shelf/core/lang/locale_keys.g.dart';
-import 'package:my_book_shelf/core/search_action.dart';
+import 'package:my_book_shelf/features/search/search_action.dart';
 import 'package:my_book_shelf/features/widgets/app_snackbar.dart';
 import 'package:my_book_shelf/features/widgets/locale_text.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class SearchComponent extends StatelessWidget {
-  const SearchComponent({super.key});
+class SearchComponent extends StatefulWidget {
+  final bool showSearchButton;
+  const SearchComponent({super.key, this.showSearchButton = true});
+
+  @override
+  State<SearchComponent> createState() => _SearchComponentState();
+}
+
+class _SearchComponentState extends State<SearchComponent> {
+  TextEditingController searchController = TextEditingController();
+  final searchAction = SearchAction(duration: const Duration(seconds: 1));
+
+  @override
+  void dispose() {
+    searchController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController searchController = TextEditingController();
-    final searchAction = SearchAction(duration: const Duration(seconds: 1));
-
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         /// MARK: Serch Bar
         Container(
-          width: 70.w,
+          width: widget.showSearchButton ? 70.w : 90.w,
           decoration: BoxDecoration(
               border: Border.all(color: Colors.white, width: 6.sp),
               borderRadius: BorderRadius.all(Radius.circular(15.sp))),
           padding: EdgeInsets.symmetric(horizontal: 3.w),
           child: TextField(
               controller: searchController,
-              onChanged: (value) {
+              onChanged: (_) {
                 searchAction.run(() {
                   if (searchController.text.trim().isNotEmpty) {
                     if (searchController.text.trim().length < 500) {
@@ -55,25 +67,31 @@ class SearchComponent extends StatelessWidget {
         ),
 
         /// MARK: Search Button
-        GestureDetector(
-          onTap: () {
-            if (searchController.text.trim().isNotEmpty)
-              context.read<BookBloc>().add(SearchBooks(searchController.text));
-          },
-          child: Container(
-            width: 20.w,
-            height: 6.h,
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(15.sp))),
-            child: const Center(
-                child: LocaleText(
-              text: LocaleKeys.search,
-              style:
-                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-            )),
-          ),
-        )
+        if (widget.showSearchButton)
+          Padding(
+            padding: EdgeInsets.only(left: 3.w),
+            child: GestureDetector(
+              onTap: () {
+                if (searchController.text.trim().isNotEmpty)
+                  context
+                      .read<BookBloc>()
+                      .add(SearchBooks(searchController.text));
+              },
+              child: Container(
+                width: 20.w,
+                height: 6.h,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(15.sp))),
+                child: const Center(
+                    child: LocaleText(
+                  text: LocaleKeys.search,
+                  style: TextStyle(
+                      color: Colors.black, fontWeight: FontWeight.bold),
+                )),
+              ),
+            ),
+          )
       ],
     );
   }
