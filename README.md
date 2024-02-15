@@ -3,6 +3,11 @@
 ## About
 This Flutter project is a mobile application that allows users to manage their favorite books. The app uses the Google Books API for searching books, Dio for handling HTTP requests, Hive for local database storage, and the BLoC pattern for state management.
 
+### Flutter Version
+Flutter 3.16.9 • channel stable
+### Dart Version
+Dart 3.2.6 • DevTools 2.28.5
+
 ## Getting Started
 To get started, you will need to have the following installed:
 ```bash
@@ -36,15 +41,13 @@ dev_dependencies:
   retrofit_generator: ^8.1.0
   hive_generator: ^2.0.1
 ```
-Once you have these installed, you can clone the repository and run the following command to install the dependencies:
+Once you have these added to pubsecp.yaml, you can clone the repository and run the following command step by step
 
 ```bash
+$ flutter clean
 $ flutter pub get
-```
-
-Then, you can run the app by running the following command:
-
-```bash
-$ flutter run
+$ cd ios && pod install
+$ dart run build_runner build --delete-conflicting-outputs
+$ dart run easy_localization:generate -O lib/core/lang -f keys -o locale_keys.g.dart -S assets/lang
 ```
 
