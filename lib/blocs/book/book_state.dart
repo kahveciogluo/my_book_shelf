@@ -13,12 +13,12 @@ final class Loading extends BookState {}
 
 final class Failure extends BookState {}
 
-final class GetAllBooks extends BookState {
-  final List<BookEntity>? allBooks;
-  const GetAllBooks({required this.allBooks});
+final class Success extends BookState {
+  final List<BookEntity>? books;
+  const Success({required this.books});
 
   @override
-  List<Object?> get props => [allBooks];
+  List<Object?> get props => [books];
 }
 
 final class UpdateFavoriteBooks extends BookState {
@@ -30,9 +30,9 @@ final class UpdateFavoriteBooks extends BookState {
 }
 
 final class GetFavoritesBooks extends BookState {
-  final List<BookEntity> favoritesBooks;
+  final List<BookEntity>? favoritesBooks;
   const GetFavoritesBooks({required this.favoritesBooks});
 
   @override
-  List<Object> get props => [favoritesBooks];
+  List<Object?> get props => [favoritesBooks];
 }

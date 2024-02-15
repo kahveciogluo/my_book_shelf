@@ -8,44 +8,56 @@ part 'book_state.dart';
 
 class BookBloc extends Bloc<BookEvent, BookState> {
   BookBloc() : super(Initial()) {
-    List<BookEntity> favorites = [];
     List<BookEntity>? allBooks;
 
-    on<FetchBooks>((event, emit) async {
-      emit(Loading());
-      try {
-        final resp = await BookService.fetchBooks(bookName: event.searchText);
-        allBooks = resp!.items;
-        emit(GetAllBooks(allBooks: allBooks));
-      } catch (_) {
-        emit(Failure());
+    on<SearchBooks>((event, emit) async {
+      if (event.searchText != null && event.searchText!.isNotEmpty) {
+        emit(Loading());
+        try {
+          final resp =
+              await BookService.fetchBooks(bookName: event.searchText!);
+          allBooks = resp!.items;
+          emit(Success(books: allBooks));
+        } catch (_) {
+          emit(Failure());
+        }
+      } else {
+        emit(Initial());
       }
-    });
-
-    on<AddBookToFavoritesFromHomePage>((event, emit) {
-      try {
-        Database.getFavorites().add(event.book);
-        favorites.add(event.book);
-        emit(GetAllBooks(allBooks: allBooks));
-      } catch (_) {}
-    });
-
-    on<DeleteBookFromFavoritesFromHomePage>((event, emit) {
-      try {
-        Database.getFavorites().delete(event.book);
-        favorites.remove(event.book);
-        emit(GetAllBooks(allBooks: allBooks));
-      } catch (_) {}
     });
 
     on<GetFavorites>((event, emit) {
       emit(Loading());
       try {
         emit(GetFavoritesBooks(
-            favoritesBooks: Database.getFavorites().values.toList()));
+            favoritesBooks:
+                Database.getFavoritesFromDatabase().values.toList()));
       } catch (_) {
         emit(Failure());
       }
+    });
+
+    on<AddBookToFavorites>((event, emit) {
+      try {
+        Database.addBookToFavoritesDatabase(event.book);
+        emit(Success(books: allBooks));
+      } catch (_) {}
+    });
+
+    on<DeleteBookFromHomePage>((event, emit) {
+      try {
+        Database.deleteBookFromFavoritesDatabase(event.book);
+        emit(Success(books: allBooks));
+      } catch (_) {}
+    });
+
+    on<DeleteBookFromFavoritesPage>((event, emit) {
+      try {
+        Database.deleteBookFromFavoritesDatabase(event.book);
+        emit(GetFavoritesBooks(
+            favoritesBooks:
+                Database.getFavoritesFromDatabase().values.toList()));
+      } catch (_) {}
     });
   }
 }

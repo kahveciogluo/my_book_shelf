@@ -7,21 +7,26 @@ abstract class BookEvent extends Equatable {
   List<Object?> get props => [];
 }
 
-class FetchBooks extends BookEvent {
-  final String searchText;
-  const FetchBooks(this.searchText);
+class SearchBooks extends BookEvent {
+  final String? searchText;
+  const SearchBooks(this.searchText);
 }
 
-class AddBookToFavoritesFromHomePage extends BookEvent {
+class AddBookToFavorites extends BookEvent {
   final BookEntity book;
-  const AddBookToFavoritesFromHomePage(this.book);
+  const AddBookToFavorites(this.book);
 }
 
-class DeleteBookFromFavoritesFromHomePage extends BookEvent {
+class DeleteBookFromHomePage extends BookEvent {
   final BookEntity book;
-  const DeleteBookFromFavoritesFromHomePage(this.book);
+  const DeleteBookFromHomePage(this.book);
 }
 
 class GetFavorites extends BookEvent {
   const GetFavorites();
+}
+
+class DeleteBookFromFavoritesPage extends BookEvent {
+  final BookEntity book;
+  const DeleteBookFromFavoritesPage(this.book);
 }
