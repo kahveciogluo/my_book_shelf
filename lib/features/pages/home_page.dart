@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
       child: SafeArea(
         child: RefreshIndicator(
           onRefresh: () async =>
-              context.read<BookBloc>().add(const SearchBooks('Özlem')),
+              context.read<BookBloc>().add(const SearchBooks(null)),
           child: Scaffold(
               key: AppGlobals.globalKey,
               backgroundColor: AppColors.appBackground,
