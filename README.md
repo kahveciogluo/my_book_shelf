@@ -5,26 +5,26 @@ This Flutter project is a mobile application that allows users to manage their f
 
 ## Getting Started
 To get started, you will need to have the following installed:
-
-dependencies:
+```bash
+ dependencies:
   flutter:
     sdk: flutter
-  ----- Datasource -----
+  # ----- Datasource -----
   dio: ^5.4.0
   retrofit: ^4.1.0
-  ----- Database -----
+  # ----- Database -----
   hive: ^2.2.3
   hive_flutter: ^1.1.0
-  ----- State Management -----
+  # ----- State Management -----
   flutter_bloc: ^8.1.4
   equatable: ^2.0.5
-  ----- l10n -----
+  # ----- l10n -----
   easy_localization: ^3.0.4
-  ----- Network Image -----
+  # ----- Network Image -----
   cached_network_image: ^3.3.1
-  ----- Responsive UI -----
+  # ----- Responsive UI -----
   responsive_sizer: ^3.3.0+1
-  ----- Json Annotation -----
+  # ----- Json Annotation -----
   json_annotation: ^4.8.1
 
 dev_dependencies:
@@ -35,13 +35,16 @@ dev_dependencies:
   json_serializable: ^6.7.1
   retrofit_generator: ^8.1.0
   hive_generator: ^2.0.1
-
+```
 Once you have these installed, you can clone the repository and run the following command to install the dependencies:
 
+```bash
 $ flutter pub get
-
+```
 
 Then, you can run the app by running the following command:
 
+```bash
 $ flutter run
+```
 
