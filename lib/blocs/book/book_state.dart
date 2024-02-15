@@ -21,14 +21,6 @@ final class Success extends BookState {
   List<Object?> get props => [books];
 }
 
-final class UpdateFavoriteBooks extends BookState {
-  final List<BookEntity> favoritesBooks;
-  const UpdateFavoriteBooks({required this.favoritesBooks});
-
-  @override
-  List<Object> get props => [favoritesBooks];
-}
-
 final class GetFavoritesBooks extends BookState {
   final List<BookEntity>? favoritesBooks;
   const GetFavoritesBooks({required this.favoritesBooks});
