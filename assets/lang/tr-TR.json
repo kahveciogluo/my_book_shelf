@@ -13,5 +13,6 @@
     "failure": "Üzgünüz, malesef böyle bir içerik bulunmuyor.",
     "initialHomePage": "Artık istediğin kitabı arayarak bulabilirsin.",
     "youHaventAddedABookToYourFavoritesYet": "Henüz favorilerine bir kitap eklemedin.",
-    "yourSelectionHasBeenRemovedFromFavorites": "Seçiminiz favorilerden çıkarıldı."
+    "yourSelectionHasBeenRemovedFromFavorites": "Seçiminiz favorilerden çıkarıldı.",
+    "yourSelectionHasBeenAddedToFavorites": "Seçiminiz favorilere eklendi."
 }
