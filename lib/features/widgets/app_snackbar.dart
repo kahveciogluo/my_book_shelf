@@ -6,10 +6,10 @@ class AppSnackBar {
     Color? backgroundColor,
   }) {
     return SnackBar(
-      content: Text(message,
-          style: const TextStyle(
-              color: Colors.black, fontWeight: FontWeight.bold)),
-      backgroundColor: backgroundColor ?? Colors.blueGrey,
-    );
+        content: Text(message,
+            style: const TextStyle(
+                color: Colors.black, fontWeight: FontWeight.bold)),
+        backgroundColor: backgroundColor ?? Colors.blueGrey,
+        duration: const Duration(milliseconds: 300));
   }
 }
