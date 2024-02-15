@@ -11,6 +11,20 @@ class Database {
     await Hive.openBox<BookEntity>(AppConfig.favoritesBox);
   }
 
-  static Box<BookEntity> getFavorites() =>
+  /// MARK: Get Favorites Database
+  static Box<BookEntity> getFavoritesFromDatabase() =>
       Hive.box<BookEntity>(AppConfig.favoritesBox);
+
+  /// MARK: Add Book To Favorites Database
+  static addBookToFavoritesDatabase(BookEntity book) async {
+    await Database.getFavoritesFromDatabase().add(book);
+  }
+
+  /// MARK: Delete Book From Favorites Database
+  static deleteBookFromFavoritesDatabase(BookEntity book) async {
+    await Database.getFavoritesFromDatabase()
+        .values
+        .firstWhere((element) => element == book)
+        .delete();
+  }
 }
