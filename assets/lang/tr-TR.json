@@ -11,5 +11,7 @@
     "countOfTotalContent": "Toplam {COUNT} içerik bulundu.",
     "loading": "Yükleniyor",
     "failure": "Üzgünüz, malesef böyle bir içerik bulunmuyor.",
-    "initialHomePage": "Artık istediğin kitabı arayarak bulabilirsin."
+    "initialHomePage": "Artık istediğin kitabı arayarak bulabilirsin.",
+    "youHaventAddedABookToYourFavoritesYet": "Henüz favorilerine bir kitap eklemedin.",
+    "yourSelectionHasBeenRemovedFromFavorites": "Seçiminiz favorilerden çıkarıldı."
 }
