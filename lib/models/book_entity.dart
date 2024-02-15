@@ -5,14 +5,13 @@ part 'book_entity.g.dart';
 
 @JsonSerializable()
 @HiveType(typeId: 0)
-class BookEntity {
+class BookEntity extends HiveObject {
   @JsonKey(name: "id")
   @HiveField(0)
   String? id;
   @JsonKey(name: "volumeInfo")
   @HiveField(1)
   VolumeInfo? volumeInfo;
-
   BookEntity({this.volumeInfo});
 
   factory BookEntity.fromJson(Map<String, dynamic> json) =>
@@ -23,7 +22,7 @@ class BookEntity {
 
 @JsonSerializable()
 @HiveType(typeId: 1)
-class VolumeInfo {
+class VolumeInfo extends HiveObject {
   @JsonKey(name: "title")
   @HiveField(0)
   String? title;
@@ -63,7 +62,7 @@ class VolumeInfo {
 
 @JsonSerializable()
 @HiveType(typeId: 2)
-class ImageLinks {
+class ImageLinks extends HiveObject {
   @JsonKey(name: "smallThumbnail")
   @HiveField(0)
   String? smallThumbnail;
