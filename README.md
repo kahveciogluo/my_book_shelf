@@ -1,3 +1,47 @@
 # my_book_shelf
 
-A new Flutter project.
+## About
+This Flutter project is a mobile application that allows users to manage their favorite books. The app uses the Google Books API for searching books, Dio for handling HTTP requests, Hive for local database storage, and the BLoC pattern for state management.
+
+## Getting Started
+To get started, you will need to have the following installed:
+
+dependencies:
+  flutter:
+    sdk: flutter
+  ----- Datasource -----
+  dio: ^5.4.0
+  retrofit: ^4.1.0
+  ----- Database -----
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  ----- State Management -----
+  flutter_bloc: ^8.1.4
+  equatable: ^2.0.5
+  ----- l10n -----
+  easy_localization: ^3.0.4
+  ----- Network Image -----
+  cached_network_image: ^3.3.1
+  ----- Responsive UI -----
+  responsive_sizer: ^3.3.0+1
+  ----- Json Annotation -----
+  json_annotation: ^4.8.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  build_runner: ^2.4.8
+  json_serializable: ^6.7.1
+  retrofit_generator: ^8.1.0
+  hive_generator: ^2.0.1
+
+Once you have these installed, you can clone the repository and run the following command to install the dependencies:
+
+$ flutter pub get
+
+
+Then, you can run the app by running the following command:
+
+$ flutter run
+
