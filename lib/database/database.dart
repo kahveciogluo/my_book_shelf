@@ -5,6 +5,7 @@ import 'package:my_book_shelf/core/app_config.dart';
 import 'package:my_book_shelf/models/book_entity.dart';
 
 class Database {
+  /// MARK: Init
   static Future<void> init() async {
     await Hive.initFlutter();
     Hive.registerAdapter(BookEntityAdapter());

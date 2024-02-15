@@ -43,7 +43,7 @@ class FavoritesPage extends StatelessWidget {
                     },
                   )),
               body: BlocBuilder<BookBloc, BookState>(builder: (context, state) {
-                /// MARK: Get All Books State
+                /// MARK: Get Favorites Books State
                 if (state is GetFavoritesBooks) {
                   return state.favoritesBooks != null &&
                           state.favoritesBooks!.isNotEmpty

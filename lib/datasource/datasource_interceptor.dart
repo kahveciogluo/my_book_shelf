@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:my_book_shelf/core/app_globals.dart';
+import 'package:my_book_shelf/core/extension/string_extension.dart';
+import 'package:my_book_shelf/core/lang/locale_keys.g.dart';
 import 'package:my_book_shelf/features/widgets/app_snackbar.dart';
 
 class DatasourceInterceptor extends Interceptor {
@@ -18,8 +20,8 @@ class DatasourceInterceptor extends Interceptor {
 
   @override
   void onError(DioException err, ErrorInterceptorHandler handler) {
-    AppGlobals.globalKey.currentState!.showSnackBar(
-        AppSnackBar.snackBar(message: err.message ?? "Sistem Hatası"));
+    AppGlobals.globalKey.currentState!.showSnackBar(AppSnackBar.snackBar(
+        message: err.message ?? LocaleKeys.systemError.locale));
     super.onError(err, handler);
   }
 }

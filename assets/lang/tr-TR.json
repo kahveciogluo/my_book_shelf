@@ -15,5 +15,6 @@
     "youHaventAddedABookToYourFavoritesYet": "Henüz favorilerine bir kitap eklemedin.",
     "yourSelectionHasBeenRemovedFromFavorites": "Seçiminiz favorilerden çıkarıldı.",
     "yourSelectionHasBeenAddedToFavorites": "Seçiminiz favorilere eklendi.",
-    "invalidSearch": "Geçersiz arama"
+    "invalidSearch": "Geçersiz arama",
+    "systemError": "Sistem Hatası"
 }
