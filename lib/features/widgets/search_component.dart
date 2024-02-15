@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_book_shelf/blocs/book/book_bloc.dart';
 import 'package:my_book_shelf/core/lang/locale_keys.g.dart';
-import 'package:my_book_shelf/features/blocs/book/book_bloc.dart';
 import 'package:my_book_shelf/features/widgets/locale_text.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
