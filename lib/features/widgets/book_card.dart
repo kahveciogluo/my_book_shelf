@@ -21,18 +21,28 @@ class BookCard extends StatefulWidget {
 }
 
 class _BookCardState extends State<BookCard> {
+  bool isFavorite = false;
+
+  @override
+  void initState() {
+    super.initState();
+    var check = Database.getFavoritesFromDatabase()
+        .values
+        .where((element) => element.id == widget.book.id);
+    isFavorite = check.isNotEmpty ? true : false;
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<BookBloc, BookState>(
         builder: (context, state) => GestureDetector(
               onDoubleTap: () {
                 ScaffoldMessenger.of(context).clearSnackBars();
-                if (widget.cameFromHomePage &&
-                    !Database.getFavoritesFromDatabase()
-                        .values
-                        .contains(widget.book)) {
+                if (widget.cameFromHomePage && !isFavorite) {
                   context.read<BookBloc>().add(AddBookToFavorites(widget.book));
-                  setState(() {});
+                  setState(() {
+                    isFavorite = true;
+                  });
                   ScaffoldMessenger.of(context).showSnackBar(
                       AppSnackBar.snackBar(
                           message: LocaleKeys
@@ -40,9 +50,7 @@ class _BookCardState extends State<BookCard> {
                 }
               },
               onLongPress: () {
-                if (Database.getFavoritesFromDatabase()
-                    .values
-                    .contains(widget.book)) {
+                if (isFavorite) {
                   ScaffoldMessenger.of(context).clearSnackBars();
                   widget.cameFromHomePage
                       ? context
@@ -51,7 +59,9 @@ class _BookCardState extends State<BookCard> {
                       : context
                           .read<BookBloc>()
                           .add(DeleteBookFromFavoritesPage(widget.book));
-                  setState(() {});
+                  setState(() {
+                    isFavorite = false;
+                  });
                   ScaffoldMessenger.of(context).showSnackBar(
                       AppSnackBar.snackBar(
                           message: LocaleKeys
@@ -63,10 +73,7 @@ class _BookCardState extends State<BookCard> {
                 padding: EdgeInsets.symmetric(vertical: 2.h, horizontal: 3.w),
                 decoration: BoxDecoration(
                     border: Border.all(
-                        color: widget.cameFromHomePage &&
-                                Database.getFavoritesFromDatabase()
-                                    .values
-                                    .contains(widget.book)
+                        color: widget.cameFromHomePage && isFavorite
                             ? Colors.blueAccent
                             : Colors.white.withOpacity(0.3),
                         width: 6.sp),

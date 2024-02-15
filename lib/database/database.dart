@@ -1,3 +1,5 @@
+// ignore_for_file: curly_braces_in_flow_control_structures
+
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:my_book_shelf/core/app_config.dart';
 import 'package:my_book_shelf/models/book_entity.dart';
@@ -17,14 +19,16 @@ class Database {
 
   /// MARK: Add Book To Favorites Database
   static addBookToFavoritesDatabase(BookEntity book) async {
-    await Database.getFavoritesFromDatabase().add(book);
+    if (!Database.getFavoritesFromDatabase().values.contains(book))
+      await Database.getFavoritesFromDatabase().add(book);
   }
 
   /// MARK: Delete Book From Favorites Database
   static deleteBookFromFavoritesDatabase(BookEntity book) async {
-    await Database.getFavoritesFromDatabase()
-        .values
-        .firstWhere((element) => element == book)
-        .delete();
+    if (Database.getFavoritesFromDatabase().values.contains(book))
+      await Database.getFavoritesFromDatabase()
+          .values
+          .firstWhere((element) => element == book)
+          .delete();
   }
 }
