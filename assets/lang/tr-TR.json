@@ -14,5 +14,6 @@
     "initialHomePage": "Artık istediğin kitabı arayarak bulabilirsin.",
     "youHaventAddedABookToYourFavoritesYet": "Henüz favorilerine bir kitap eklemedin.",
     "yourSelectionHasBeenRemovedFromFavorites": "Seçiminiz favorilerden çıkarıldı.",
-    "yourSelectionHasBeenAddedToFavorites": "Seçiminiz favorilere eklendi."
+    "yourSelectionHasBeenAddedToFavorites": "Seçiminiz favorilere eklendi.",
+    "invalidSearch": "Geçersiz arama"
 }

@@ -14,5 +14,6 @@
     "initialHomePage": "Now you can find the book you want by searching.",
     "youHaventAddedABookToYourFavoritesYet": "You haven't added a book to your favorites yet.",
     "yourSelectionHasBeenRemovedFromFavorites": "Your selection has been removed from favorites.",
-    "yourSelectionHasBeenAddedToFavorites": "Your selection has been added to favorites."
+    "yourSelectionHasBeenAddedToFavorites": "Your selection has been added to favorites.",
+    "invalidSearch": "Invalid search"
 }

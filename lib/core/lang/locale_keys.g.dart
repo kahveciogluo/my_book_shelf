@@ -17,5 +17,6 @@ abstract class  LocaleKeys {
   static const youHaventAddedABookToYourFavoritesYet = 'youHaventAddedABookToYourFavoritesYet';
   static const yourSelectionHasBeenRemovedFromFavorites = 'yourSelectionHasBeenRemovedFromFavorites';
   static const yourSelectionHasBeenAddedToFavorites = 'yourSelectionHasBeenAddedToFavorites';
+  static const invalidSearch = 'invalidSearch';
 
 }
