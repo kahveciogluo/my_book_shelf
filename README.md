@@ -1,7 +1,7 @@
 # my_book_shelf
 
 ## About
-This Flutter project is a mobile application that allows users to manage their favorite books. The app uses the Google Books API for searching books, Dio for handling HTTP requests, Hive for local database storage, and the BLoC pattern for state management.
+This Flutter project is a mobile application that allows users to manage their favorite books. The app design with Clean Architecture and uses the Google Books API for searching books, Dio for handling HTTP requests, Hive for local database storage, and the BLoC pattern for state management.
 
 ### Flutter Version
 Flutter 3.16.9 • channel stable
