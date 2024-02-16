@@ -52,8 +52,8 @@ $ dart run easy_localization:generate -O lib/core/lang -f keys -o locale_keys.g.
 ```
 
 ### App Video
+<video src="https://github.com/kahveciogluo/my_book_shelf/assets/80224415/dfb0e0a2-a64e-438d-8c37-43951b5fa150" width="300" />
 
-![my_book_shelf_app_video] (https://github.com/kahveciogluo/my_book_shelf/assets/80224415/9629b7fb-a0ab-4306-99fc-2cbbd6089a44)
 
 
 
