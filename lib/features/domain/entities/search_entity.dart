@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:my_book_shelf/models/book_entity.dart';
+import 'package:my_book_shelf/features/domain/entities/book_entity.dart';
 
 part 'search_entity.g.dart';
 

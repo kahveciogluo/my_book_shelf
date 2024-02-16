@@ -1,8 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_book_shelf/database/database.dart';
-import 'package:my_book_shelf/datasource/services/book_service.dart';
-import 'package:my_book_shelf/models/book_entity.dart';
+import 'package:my_book_shelf/features/data/database/database.dart';
+import 'package:my_book_shelf/features/domain/repositories/book_repository.dart';
+import 'package:my_book_shelf/features/domain/entities/book_entity.dart';
 part 'book_event.dart';
 part 'book_state.dart';
 
@@ -15,7 +15,7 @@ class BookBloc extends Bloc<BookEvent, BookState> {
         emit(Loading());
         try {
           final resp =
-              await BookService.fetchBooks(bookName: event.searchText!);
+              await BookRepository.fetchBooks(bookName: event.searchText!);
           allBooks = resp!.items;
           emit(Success(books: allBooks));
         } catch (_) {

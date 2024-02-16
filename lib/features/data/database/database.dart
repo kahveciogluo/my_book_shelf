@@ -2,7 +2,7 @@
 
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:my_book_shelf/core/app_config.dart';
-import 'package:my_book_shelf/models/book_entity.dart';
+import 'package:my_book_shelf/features/domain/entities/book_entity.dart';
 
 class Database {
   /// MARK: Init

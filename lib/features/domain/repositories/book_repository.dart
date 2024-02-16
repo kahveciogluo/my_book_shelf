@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'package:my_book_shelf/core/app_config.dart';
-import 'package:my_book_shelf/datasource/datasource.dart';
-import 'package:my_book_shelf/datasource/datasource_client.dart';
-import 'package:my_book_shelf/models/search_entity.dart';
+import 'package:my_book_shelf/features/data/datasource/datasource.dart';
+import 'package:my_book_shelf/features/data/datasource/datasource_client.dart';
+import 'package:my_book_shelf/features/domain/entities/search_entity.dart';
 
-class BookService {
+class BookRepository {
   static late DatasourceClient apiClient;
 
   static void init() {

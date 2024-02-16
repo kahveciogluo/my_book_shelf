@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_book_shelf/blocs/book/book_bloc.dart';
 import 'package:my_book_shelf/core/app_colors.dart';
 import 'package:my_book_shelf/core/app_globals.dart';
 import 'package:my_book_shelf/core/app_images.dart';
 import 'package:my_book_shelf/core/extension/string_extension.dart';
 import 'package:my_book_shelf/core/lang/locale_keys.g.dart';
-import 'package:my_book_shelf/features/pages/favorites_page.dart';
-import 'package:my_book_shelf/features/widgets/app_state_widget.dart';
-import 'package:my_book_shelf/features/widgets/book_card.dart';
-import 'package:my_book_shelf/features/search/search_component.dart';
+import 'package:my_book_shelf/features/presentation/blocs/book/book_bloc.dart';
+import 'package:my_book_shelf/features/presentation/pages/favorites_page.dart';
+import 'package:my_book_shelf/features/presentation/widgets/app_state_widget.dart';
+import 'package:my_book_shelf/features/presentation/widgets/book_card.dart';
+import 'package:my_book_shelf/features/presentation/components/search/search_component.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class HomePage extends StatefulWidget {

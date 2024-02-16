@@ -1,13 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_book_shelf/blocs/book/book_bloc.dart';
 import 'package:my_book_shelf/core/app_images.dart';
 import 'package:my_book_shelf/core/extension/string_extension.dart';
 import 'package:my_book_shelf/core/lang/locale_keys.g.dart';
-import 'package:my_book_shelf/database/database.dart';
-import 'package:my_book_shelf/features/widgets/app_snackbar.dart';
-import 'package:my_book_shelf/models/book_entity.dart';
+import 'package:my_book_shelf/features/data/database/database.dart';
+import 'package:my_book_shelf/features/domain/entities/book_entity.dart';
+import 'package:my_book_shelf/features/presentation/blocs/book/book_bloc.dart';
+import 'package:my_book_shelf/features/presentation/widgets/app_snackbar.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class BookCard extends StatefulWidget {

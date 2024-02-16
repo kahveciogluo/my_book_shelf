@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:my_book_shelf/core/app_globals.dart';
 import 'package:my_book_shelf/core/extension/string_extension.dart';
 import 'package:my_book_shelf/core/lang/locale_keys.g.dart';
-import 'package:my_book_shelf/features/widgets/app_snackbar.dart';
+import 'package:my_book_shelf/features/presentation/widgets/app_snackbar.dart';
 
 class DatasourceInterceptor extends Interceptor {
   @override

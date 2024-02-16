@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:my_book_shelf/core/app_config.dart';
-import 'package:my_book_shelf/datasource/datasource_interceptor.dart';
+import 'package:my_book_shelf/features/data/datasource/datasource_interceptor.dart';
 
 class Datasource {
   static Dio? _dio;

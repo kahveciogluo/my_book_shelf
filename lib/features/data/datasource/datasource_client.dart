@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:my_book_shelf/core/app_config.dart';
-import 'package:my_book_shelf/models/search_entity.dart';
+import 'package:my_book_shelf/features/domain/entities/search_entity.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'datasource_client.g.dart';
