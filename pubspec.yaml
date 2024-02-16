@@ -26,6 +26,8 @@ dependencies:
   responsive_sizer: ^3.3.0+1
   # ----- Json Annotation -----
   json_annotation: ^4.8.1
+  # ----- Test -----
+  bloc_test: ^9.1.6
 
 dev_dependencies:
   flutter_test:
